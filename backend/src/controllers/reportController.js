@@ -1483,7 +1483,8 @@ export async function invoicesExcel(
         x.buyerSnapshot
           ?.gstin ||
         '',
-
+          'Buyer Name':
+        x.buyerSnapshot?.name || '',
       Taxable: val(
         x.taxableTotal
       ),
