@@ -24,7 +24,12 @@ app.use(helmet());
 app.use(rateLimit({windowMs:15*60*1000,max:300,standardHeaders:true,legacyHeaders:false}));
 app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:5173' }));
 app.use(express.json({ limit: '1mb' }));
-
+app.get('/', (req, res) => {
+  res.json({
+    status: 'ok',
+    message: 'Tax Admin System API is running',
+  });
+});
 app.get('/api/health', (_req, res) => res.json({ ok: true }));
 app.use('/api/auth', authRoutes);
 app.use('/api/dashboard', dashboardRoutes);
