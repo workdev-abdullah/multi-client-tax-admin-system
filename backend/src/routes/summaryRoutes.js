@@ -1,0 +1,1 @@
+import {Router} from 'express';import {requireAdmin} from '../middleware/auth.js';import {summary} from '../controllers/summaryController.js';const r=Router();r.get('/',requireAdmin,summary);export default r;

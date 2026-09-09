@@ -1,0 +1,4 @@
+import mongoose from 'mongoose';
+const schema=new mongoose.Schema({clientId:{type:mongoose.Schema.Types.ObjectId,ref:'Client',required:true,index:true},businessName:{type:String,default:''},address:{type:String,default:''},city:{type:String,default:''},district:{type:String,default:''},state:{type:String,default:''},stateCode:{type:String,default:''},pincode:{type:String,default:''},phone:{type:String,default:''},email:{type:String,default:''},gstin:{type:String,default:''},pan:{type:String,default:''},logoPath:{type:String,default:''},signaturePath:{type:String,default:''},invoicePrefix:{type:String,default:'INV'},financialYear:{type:String,default:''},startingSequence:{type:Number,default:1},paymentTerms:{type:String,default:''},declaration:{type:String,default:''},roundOff:{type:Boolean,default:false}},{timestamps:true});
+schema.index({clientId:1},{unique:true,sparse:true});
+export default mongoose.model('Settings',schema);

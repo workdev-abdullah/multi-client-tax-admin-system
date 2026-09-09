@@ -1,0 +1,1 @@
+import {Router} from 'express';import {requireAdmin} from '../middleware/auth.js';import {listInventory,stockIn,setOpening,history} from '../controllers/inventoryController.js';const r=Router();r.use(requireAdmin);r.get('/',listInventory);r.post('/stock-in',stockIn);r.post('/opening',setOpening);r.get('/history',history);export default r;

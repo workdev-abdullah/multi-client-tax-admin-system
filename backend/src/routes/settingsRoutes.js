@@ -1,0 +1,10 @@
+import {Router} from 'express';
+import {requireAdmin} from '../middleware/auth.js';
+import {getSettings,updateSettings} from '../controllers/settingsController.js';
+import {listAuditLogs} from '../controllers/auditController.js';
+const r=Router();
+r.use(requireAdmin);
+r.get('/',getSettings);
+r.put('/',updateSettings);
+r.get('/activity',listAuditLogs);
+export default r;

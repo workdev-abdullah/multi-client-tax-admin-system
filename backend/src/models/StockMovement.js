@@ -1,0 +1,3 @@
+import mongoose from 'mongoose';
+const schema=new mongoose.Schema({clientId:{type:mongoose.Schema.Types.ObjectId,ref:'Client',required:true,index:true},productId:{type:mongoose.Schema.Types.ObjectId,ref:'Product',required:true,index:true},type:{type:String,enum:['OPENING','STOCK_IN','SALE','ADJUSTMENT_IN','ADJUSTMENT_OUT'],required:true},quantity:{type:Number,required:true},previousBalance:{type:Number,required:true},newBalance:{type:Number,required:true},reference:{type:String,default:''},notes:{type:String,default:''},createdBy:{type:String,default:''}},{timestamps:true});
+schema.index({clientId:1,createdAt:-1}); export default mongoose.model('StockMovement',schema);
