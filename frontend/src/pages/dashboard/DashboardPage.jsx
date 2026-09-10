@@ -57,8 +57,8 @@ export default function DashboardPage({ navigate, clientId }) {
 
   const values = stats || {};
 
-  return (
-    <section>
+ return (
+  <section className="dashboard-page">
       {error && (
         <div className="error page-error dashboard-error" role="alert">
           <span>{error}</span>

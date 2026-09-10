@@ -271,7 +271,7 @@ export default function ClientsPage() {
   );
 
   return (
-    <section>
+      <section className="clients-page">
       <div className="page-head">
         <div>
           <h3>Clients</h3>
